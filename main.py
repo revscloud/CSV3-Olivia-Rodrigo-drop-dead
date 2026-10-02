@@ -32,7 +32,7 @@ LOGO_PATH     = "logo.png"
 STAGE_GAP_MS  = 90   # jeda antar elemen saat muncul
 
 
-# ---------- Pilih font serif ----------
+# ---------- Font ----------
 def pick_serif_font():
     try:
         probe = tk.Tk(); probe.withdraw()
@@ -215,10 +215,10 @@ class OutroScreen:
         except tk.TclError:
             pass
 
-        # Ornamen tepi
+        # Build Ornamen nya
         self._build_edge_ornaments()
 
-        # Judul (font disiapkan, ukuran awal sangat kecil)
+        # Judul (font disiapin, tapi ukuran awal sangat kecil)
         self.title_font = tkfont.Font(family=SERIF_FONT, size=4,
                                       weight="bold", slant="italic")
         self.title_label = tk.Label(
@@ -235,7 +235,7 @@ class OutroScreen:
         )
         self.sub_label.place(relx=0.5, rely=0.57, anchor="center")
 
-        # ---- Logo: pakai placeholder transparan biar tidak blink ----
+        # ---- Logo ----
         self.logo_img = None
         self.logo_base = None
         self.logo_is_text = False
@@ -249,7 +249,7 @@ class OutroScreen:
                     (int(orig.width * ratio), int(orig.height * ratio)),
                     Image.LANCZOS,
                 )
-                # Placeholder 1x1 transparan (bukan gambar asli)
+                # Placeholder 1x1 transparan
                 placeholder = Image.new("RGBA", (1, 1), (0, 0, 0, 0))
                 self.logo_img = ImageTk.PhotoImage(placeholder)
                 self.logo_label = tk.Label(
@@ -273,7 +273,7 @@ class OutroScreen:
 
         self.logo_label.place(relx=0.5, rely=0.75, anchor="center")
 
-        # Bind Esc — bind_all supaya dapat dari window mana saja
+        # Bind Esc — bind_all supaya dapat dari window mana aja
         try:
             self.win.bind_all("<Escape>", self._handle_escape)
         except tk.TclError:
@@ -338,7 +338,7 @@ class OutroScreen:
 
         step()
 
-    # ---------- Animasi font scale (bounce) ----------
+    # ---------- Animasi font scale (bouncing) ----------
     def _animate_font_scale(self, font_obj, min_size, max_size,
                             duration_ms, delay_ms, on_done=None):
         holder = {"start": None}
@@ -511,7 +511,6 @@ class LyricFloatApp:
     def start(self):
         self.root.iconify()
         self.overlay = self.create_overlay()
-        # Bind Esc juga di root, backup
         try:
             self.root.bind_all("<Escape>", lambda e: self.exit_program())
         except tk.TclError:
@@ -526,7 +525,7 @@ class LyricFloatApp:
             return
         self.outro_shown = True
 
-        # Hancurkan semua kartu
+        # Hancurin semua kartu nya
         for box in self.boxes:
             try:
                 box.win.destroy()
@@ -543,7 +542,7 @@ class LyricFloatApp:
         except tk.TclError:
             pass
 
-    # ---------- Keluar: fade out lalu destroy semua ----------
+    # ---------- Keluar: fade out habis itu destroy semua ----------
     def exit_program(self):
         if self.exiting:
             return
