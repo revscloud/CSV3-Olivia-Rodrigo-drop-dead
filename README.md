@@ -74,7 +74,7 @@
 ### 1. Clone repo-nya
 
 ```bash
-git clone https://github.com/USERNAME/CodeSong-V3.git
+git clone https://github.com/revscloud/CSV3-Olivia-Rodrigo-drop-dead.git
 cd CodeSong-V3
 ```
 
