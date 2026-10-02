@@ -75,7 +75,7 @@
 
 ```bash
 git clone https://github.com/revscloud/CSV3-Olivia-Rodrigo-drop-dead.git
-cd CodeSong-V3
+cd CSV3-Olivia-Rodrigo-drop-dead
 ```
 
 ### 2. (Opsional) Buat virtual environment
@@ -173,7 +173,7 @@ Tekan **`ESC`** kapan saja untuk keluar. Program akan fade-out dengan mulus sebe
 ## 📁 Struktur Folder
 
 ```
-CodeSong-V3/
+/
 ├── main.py               # Script utama
 ├── song.wav              # File lagu (WAJIB ada)
 ├── logo.png              # Logo outro (opsional)
